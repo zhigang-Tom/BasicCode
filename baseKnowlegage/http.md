@@ -16,7 +16,7 @@ Http工作于客户端服务器架构上，浏览器作为客户端通过URL向�
 <p>
 Http请求消息由以下四部分组成：请求行，请求头部，空行，请求数据。
 </p>
-<img src="./image/http.png"/>
+<img src="../image/http.png"/>
 
 ####1.请求行
 <p>

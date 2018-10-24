@@ -53,7 +53,7 @@ token的流程
     'Authorization': 'Bearer ' + token
   }
 ```
-<img src = './image/token.png'/>
+<img src = '../image/token.png'/>
 
 ####7.token的组成部分
 <p>
