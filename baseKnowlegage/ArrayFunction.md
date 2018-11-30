@@ -164,7 +164,7 @@ Array.forEach()从头至尾遍历数组元素，为每个元素调用指定的�
 </p>
 
 ```
-var c = [1,2,3,4,5];
+var c = [1,2,3,4,5,6];
 c.forEach(function (v,i,a) {
     console.log(v)//元素
     console.log(i)//索引
@@ -363,4 +363,29 @@ console.log(arr1);
 let arr2 = Array.of("hello");
 console.log(arr2)
 //["hello"]
+```
+#####21.获取数组最大值的四种方法
+```
+let arr = [7,2,0,-3,5];
+let max1 = Math.max.apply(null,arr);
+console.log(max1) // 7
+```
+```
+let arr = [7,2,0,-3,5];
+// 注意参数格式
+let max2 = Math.max.call(null, 7,2,0,-3,5);
+console.log(max2) // 7
+```
+```
+let arr = [7,2,0,-3,5];
+// sort()默认是升序排列
+var max3 = arr.sort().reverse()[0];
+console.log(max3) // 7
+```
+```
+let arr = [7,2,0,-3,5];
+let max4 = arr.sort((a,b) => {
+    return b-a;
+})[0];
+console.log(max4) // 7
 ```

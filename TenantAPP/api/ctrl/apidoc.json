@@ -1,0 +1,16 @@
+{
+    "name": "API 接口文档",
+    "version": "1.0",
+    "description": "本文采用的格式为RESTful规范",
+    "template": {
+      "withCompare": false,
+      "withGenerator":true
+    },
+    "order": [
+      "get",
+      "post",
+      "put",
+      "delete"
+    ]
+}
+  

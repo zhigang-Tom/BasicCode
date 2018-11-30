@@ -1,0 +1,367 @@
+{
+	"info": {
+		"name": "Exprestful",
+		"_postman_id": "a495c906-fe06-8eb7-168d-db545b78a445",
+		"description": "Exprestful Test Cases",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "test",
+			"description": "",
+			"item": [
+				{
+					"name": "connect",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:8001/test",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"test"
+							]
+						},
+						"description": "测试连接情况"
+					},
+					"response": []
+				},
+				{
+					"name": "method",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:8001/test/method",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"test",
+								"method"
+							]
+						},
+						"description": "调用Ctrl中的内部方法"
+					},
+					"response": []
+				},
+				{
+					"name": "post",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"myname\":\"guixue\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8001/test/post",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"test",
+								"post"
+							]
+						},
+						"description": "post 调用"
+					},
+					"response": []
+				},
+				{
+					"name": "put",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"myname\":\"guixue\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8001/test/put",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"test",
+								"put"
+							]
+						},
+						"description": "put 调用"
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "localhost:8001/test/del/123321",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"test",
+								"del",
+								"123321"
+							]
+						},
+						"description": "delete 调用"
+					},
+					"response": []
+				},
+				{
+					"name": "error",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "localhost:8001/test/error/500",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"test",
+								"error",
+								"500"
+							]
+						},
+						"description": "出错信息测试"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"description": "",
+			"item": [
+				{
+					"name": "add",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Username\": \"user5\",\n\t\"Password\" : \"123\",\n\t\"Name\"\t   :\"user\",\n\t\"Remark\" : \"TEST\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8001/user",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"user"
+							]
+						},
+						"description": "新增 User"
+					},
+					"response": []
+				},
+				{
+					"name": "list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"guixue\",\n\t\"role\" : \"admin\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8001/user/list?limit=5&offset=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"user",
+								"list"
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "5",
+									"equals": true
+								},
+								{
+									"key": "offset",
+									"value": "2",
+									"equals": true
+								}
+							]
+						},
+						"description": "获取所有User"
+					},
+					"response": []
+				},
+				{
+					"name": "role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0ZW5hbnQiOiJkZWZhdWx0Iiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNTIyMTM0NTAzLCJpYXQiOjE1MTk1NDI1MDN9.NBHmbTz2NWqCh2dhY5AkJ3adjI7OYaQZOgEsYTevnQY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"guixue\",\n\t\"role\" : \"admin\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8001/user/role",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"user",
+								"role"
+							]
+						},
+						"description": "访问角色控制"
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"Username\": \"admin\",\n\t\"Password\": \"123\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8001/user/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8001",
+							"path": [
+								"user",
+								"login"
+							]
+						},
+						"description": "User 登陆"
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI1YTkyYWQ0OGIwYWQwYjVlODA1NzhmNDMiLCJ0ZW5hbnQiOiJub25lIiwicm9sZSI6ImFkbWluIiwiZXhwIjoxNTIyMTU4NTYwLCJpYXQiOjE1MTk1NjY1NjB9.fDp1KfOxXuN3c2usV0jxDrDB_O94A_LqKuBH9oqkRB4",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "fb4b819d-132f-47c7-b946-6463409d3bfa",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "a5b944ae-7ec7-41a4-8ac7-dd0064b8c8ca",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "68219677-764f-494a-ab65-cbcf15eeaac9",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "d2f84df9-dcb2-4896-8a4d-3ffad746f81d",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

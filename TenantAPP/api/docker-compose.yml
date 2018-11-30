@@ -1,0 +1,9 @@
+version: '2'
+
+services:
+  exprest:
+    build: .
+    volumes:
+      - .:/src/rest
+    ports:
+      - "8001:8001"

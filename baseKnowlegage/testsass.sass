@@ -1,0 +1,32 @@
+#content {
+  article {
+    h1 { color: #333 }
+    p { margin-bottom: 1.4em }
+  }
+  aside { background-color: #EEE }
+}
+
+#content {
+    article {
+        h1 { color: #333 } 
+        p { margin-bottom: 1.4em }   
+    }
+    aside { background-color: #eee}
+}
+#content {
+    background-color: red;
+    & a:hover { color: red;}
+}
+#content a{
+    &:hover{ color: red;}    
+}
+.content {
+    h1,h2,h3 {
+        margin-bottom: 1.4em;    
+    }
+}
+.content,article {
+    a {
+        margin-bottom: 1.4em;
+    }
+}
