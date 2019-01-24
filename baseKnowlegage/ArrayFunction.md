@@ -14,6 +14,7 @@ var b = a.join('-');
 Array.reverse()将数组中的元素颠倒顺序，返回逆序数组。它不通过重新排列的元素创建
 新数组，而是在原数组中重新排列元素顺序
 </p>
+
 ```
 var a = [1,2,3];
 var b = a.reverse();
@@ -30,6 +31,7 @@ Array.sort()将数组中的元素排序并返回排序后的数组，当不带�
 于0的数值，反之，假设第一个参数应该在后，函数应该返回一个大于0的数值，假设两个值相等
 函数应该返回0
 </p>
+
 ```
   var a = ['cat','Dog','ant','tom'];
         a.sort(function (s,t) {
@@ -356,6 +358,7 @@ console.log(res2)
 <p>
 Array.of()函数传进去一串值以逗号分开返回一个数组
 </p>
+
 ```
 let arr1 = Array.of(1,2,3,4,5);
 console.log(arr1);
