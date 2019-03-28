@@ -1,11 +1,13 @@
 ####position
 
 #####static
+
 <p>
 static默认值，元素不会被定位
 </p>
 
 #####relative
+
 <p>
 relative：表现的和 static 一样，除非你添加了一些额外的属性。
 </p>
@@ -25,6 +27,7 @@ relative：表现的和 static 一样，除非你添加了一些额外的属性�
 </p>
 
 #####absolute
+
 <p>
 absolute是相对于距离自己最近的被定位的祖先元素来定位的，如果找不到被定位的祖先元素会相对于body来定位
 </p>

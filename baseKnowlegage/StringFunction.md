@@ -62,7 +62,7 @@ console.log(res);
 
 #####5.substring()
 <p>
-stringObject.substring(start[, end]) 用于截取字符串片段，返回从start到end【不包括】之间的字符串，start、end均为非负整数，若结束参数省略，则表示从start位置开始一直截取到最后
+stringObject.substring(start, [end]) 用于截取字符串片段，返回从start到end【不包括】之间的字符串，start、end均为非负整数，若结束参数省略，则表示从start位置开始一直截取到最后
 </p>
 
 ```

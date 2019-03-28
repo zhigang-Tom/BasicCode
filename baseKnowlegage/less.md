@@ -1,14 +1,17 @@
-####Less学习总结
+####Less 学习总结
+
 <p>
 本质上，LESS 包含一套自定义的语法及一个解析器，用户根据这些语法定义自己的样式规则，这些规则最终会通过解析器，编译生成对应的 CSS 文件。LESS 并没有裁剪 CSS 原有的特性，更不是用来取代 CSS 的，而是在现有 CSS 语法的基础上，为 CSS 加入程序式语言的特性。
 </p>
 
-####一、less变量
+####一、less 变量
+
 <p>
 以@开头定义变量，并且使用时直接键入@名称。
 </p>
 
 #####值变量
+
 ```
 /*less*/
 @color: #999;
@@ -27,6 +30,7 @@
 ```
 
 #####选择器变量
+
 ```
 /*选择器变量必须是用大括号{}包裹*/
 /* Less */
@@ -56,6 +60,7 @@ color:#666;
 ```
 
 #####属性变量
+
 ```
 /* Less */
 @borderStyle: border-style;
@@ -68,10 +73,11 @@ color:#666;
 #wrap{
 border-style:solid;
 }
-    
+
 ```
 
-#####url变量
+#####url 变量
+
 ```
 /* Less */
 @images: "../img";//需要加引号
@@ -83,10 +89,11 @@ body {
 body {
   background: url("../img/dog.png");
 }
-    
+
 ```
 
 #####声明变量
+
 ```
 /*声明变量*/
 - 结构: @name: { 属性: 值 ;};
@@ -115,7 +122,7 @@ body {
     height: 200px;
     border: solid 1px red;
 }
-    
+
 ```
 
 #####变量运算
@@ -145,6 +152,7 @@ body {
 ```
 
 #####变量作用域
+
 ```
 一句话理解就是：就近原则，不要跟我提闭包。
       /* Less */
@@ -154,13 +162,15 @@ body {
         width: @var;
         @a: 9%;
       }
-    
+
       /* 生成的 CSS */
       #wrap {
         width: 9%;
       }
 ```
+
 #####用变量去定义变量
+
 ```
 /* Less */
 @fnord:  "I am fnord.";
@@ -177,6 +187,7 @@ body {
 ####二、嵌套
 
 ##### & 的妙用
+
 ```
 & ：代表的上一层选择器的名字，此例便是header。
 /* Less */
@@ -202,6 +213,7 @@ body {
         margin:20px;
     }
 ```
+
 ##### 媒体查询
 
 ```
@@ -222,7 +234,7 @@ body {
 /* 生成的 CSS */
 @media screen and (max-width:768px){
     #main{
-        width:100px; 
+        width:100px;
     }
 }
 @media tv{
@@ -249,7 +261,7 @@ body {
 
       const main = document.getElementById("main");
       main.classList.add("show");
-      
+
       #main.show{
         display:block;
       }
@@ -261,6 +273,7 @@ body {
 ####三、混合方法
 
 #####无参数方法
+
 ```
 方法犹如声明的集合，使用时 直接键入名称即可。
 /* Less */
@@ -315,7 +328,7 @@ Less 可以使用默认参数，如果 没有传参数，那么将使用默认�
       #content{
         .border;//等价于 .border()
       }
-    
+
       /* 生成的 CSS */
       #main{
           border:solid 1px red;
@@ -329,9 +342,11 @@ Less 可以使用默认参数，如果 没有传参数，那么将使用默认�
           border:solid 1px #000;
           box-shadow: 10px 50px 30px #000;
       }
-    
+
 ```
+
 #####方法的匹配模式
+
 ```
 与 面向对象中的多态 很相似
       /* Less */
@@ -341,7 +356,7 @@ Less 可以使用默认参数，如果 没有传参数，那么将使用默认�
       .triangle(right,@width:20px,@color:#000){
           border-color:transparent @color transparent  transparent ;
       }
-    
+
       .triangle(bottom,@width:20px,@color:#000){
           border-color:@color transparent  transparent  transparent ;
       }
@@ -366,6 +381,7 @@ Less 可以使用默认参数，如果 没有传参数，那么将使用默认�
     - 如果匹配的参数 是变量，则将会匹配，如 `@_` 。
 
 ```
+
 #####方法的命名空间
 
 ```
@@ -374,7 +390,7 @@ Less 可以使用默认参数，如果 没有传参数，那么将使用默认�
         background: #723232;
         .d(@w:300px){
             width: @w;
-            
+
             #a(@h:300px){
                 height: @h;//可以使用上一层传进来的方法
                 width: @w;
@@ -413,21 +429,22 @@ Less 可以使用默认参数，如果 没有传参数，那么将使用默认�
 ```
 
 #####方法的条件筛选
+
 ```
 Less 没有 if else，可是它有 when
     /* Less */
     #card{
-        
+
         // and 运算符 ，相当于 与运算 &&，必须条件全部符合才会执行
         .border(@width,@color,@style) when (@width>100px) and(@color=#999){
             border:@style @color @width;
         }
-    
+
         // not 运算符，相当于 非运算 !，条件为 不符合才会执行
         .background(@color) when not (@color>=#222){
             background:@color;
         }
-    
+
         // , 逗号分隔符：相当于 或运算 ||，只要有一个符合条件就会执行
         .font(@size:20px) when (@size>50px) , (@size<100px){
             font-size: @size;
@@ -448,9 +465,11 @@ Less 没有 if else，可是它有 when
   - 比较运算有： > >= = =< <。
   - = 代表的是等于
   - 除去关键字 true 以外的值都被视为 false：
-   
+
 ```
+
 #####数量不定的参数
+
 ```
 如果你希望你的方法接受数量不定的参数，你可以使用... ，犹如 ES6 的扩展运算符。
     /* Less */
@@ -472,7 +491,8 @@ Less 没有 if else，可是它有 when
     }
 ```
 
-##### 方法使用important！
+##### 方法使用 important！
+
 ```
 使用方法 非常简单，在方法名后 加上关键字即可。
     /* Less */
@@ -489,6 +509,7 @@ Less 没有 if else，可是它有 when
         margin: 50px !important;
     }
 ```
+
 #####循环方法
 
 ```
@@ -516,11 +537,13 @@ Less 没有 if else，可是它有 when
         width: 100%;
     }
 ```
+
 ####导入
+
 ```
 1.导入 less 文件 可省略后缀
 2.@import 的位置可随意放置
-import "main"; 
+import "main";
 //等价于
 import "main.less";
 
@@ -588,7 +611,7 @@ import "main.less";
     // file: main.less
     @import (multiple) "foo.less";
     @import (multiple) "foo.less";
-    
+
     /* 生成后的 CSS */
     .a {
         color: green;

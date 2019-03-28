@@ -1,263 +1,268 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Flex Example</title>
     <style>
-        .container{
-            width: 400px;
-            height: 130px;
-            border-radius: 20px;
-            background-color: black;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            margin-left: 10px;
-            margin-top: 10px;
-        }
-        .box{
-            display: flex;
-            width: 110px;
-            height: 110px;
-            border-radius: 10px;
-            background-color: white;
-        }
-        span{
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            background-color: black;
-            margin-left: 10px;
-            margin-top: 10px;
-        }
-        .span{
-            margin-left: 0px;
-        }
-        .spanR{
-            margin-right: 10px;
-        }
-        .spanT{
-            margin-top: 0px;
-        }
-        .column{
-            display: flex;
-            flex-basis: 100%;
-            justify-content: space-around;
-            align-items: center;
-        }
-        /*----------------Grid-------------------*/
-        hr{
-            border: solid 1px yellow;
-        }
-        .Grid{
-            display: flex;
-            width: 90%;
-            margin: 0 auto;
-            height: 220px;
-            background-color: black;
-            border-radius: 20px;
-            flex-wrap: wrap;
-        }
-        .GridRow{
-            display: flex;
-            flex-basis: 100%;
-            justify-content: space-around;
-            align-items: center;
-            border: solid 1px red;
-        }
-        .GridCeil{
-            flex-grow: 0;
-            background-color: grey;
-            width: 25%;
-            height: 30px;
-            border-radius: 3%;
-            text-align: center;
-            color: whitesmoke;
-        }
-        /*----------------圣杯布局-------------------*/
-        .Grail{
-            display: flex;
-            flex-direction: column;
-            width: 600px;
-            height: 400px;
-            border-radius: 30px;
-            margin: 10px auto;
-            justify-content: space-between;
-        }
-        .Grail header{
-            width: 100%;
-            height: 15%;
-            text-align: center;
-            color: red;
-            background-color: #666666;
-        }
-        .Grail .GrailBox{
-            width: 100%;
-            height: 60%;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-        }
-        .Grail .GrailBox main,.Grail .GrailBox nav,.Grail .GrailBox aside{
-            width: 30%;
-            height: 100%;
-            text-align: center;
-        }
-        .Grail .GrailBox main{
-            background-color: #d6d6d6;
-            flex-grow: 1;
-        }
-        .Grail .GrailBox nav{
-            background-color: #7bd;
-            order: -1;
-        }
-        .Grail .GrailBox aside{
-            background-color: #ff6633;
-        }
-        .Grail footer{
-            width: 100%;
-            height: 15%;
-            text-align: center;
-            background-color: #666666
-        }
+      .container {
+        width: 400px;
+        height: 130px;
+        border-radius: 20px;
+        background-color: black;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-left: 10px;
+        margin-top: 10px;
+      }
+      .box {
+        display: flex;
+        width: 110px;
+        height: 110px;
+        border-radius: 10px;
+        background-color: white;
+      }
+      span {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: black;
+        margin-left: 10px;
+        margin-top: 10px;
+      }
+      .span {
+        margin-left: 0px;
+      }
+      .spanR {
+        margin-right: 10px;
+      }
+      .spanT {
+        margin-top: 0px;
+      }
+      .column {
+        display: flex;
+        flex-basis: 100%;
+        justify-content: space-around;
+        align-items: center;
+      }
+      /*----------------Grid-------------------*/
+      hr {
+        border: solid 1px yellow;
+      }
+      .Grid {
+        display: flex;
+        width: 90%;
+        margin: 0 auto;
+        height: 220px;
+        background-color: black;
+        border-radius: 20px;
+        flex-wrap: wrap;
+      }
+      .GridRow {
+        display: flex;
+        flex-basis: 100%;
+        justify-content: space-around;
+        align-items: center;
+        border: solid 1px red;
+      }
+      .GridCeil {
+        flex-grow: 0;
+        background-color: grey;
+        width: 25%;
+        height: 30px;
+        border-radius: 3%;
+        text-align: center;
+        color: whitesmoke;
+      }
+      /*----------------圣杯布局-------------------*/
+      .Grail {
+        display: flex;
+        flex-direction: column;
+        width: 600px;
+        height: 400px;
+        border-radius: 30px;
+        margin: 10px auto;
+        justify-content: space-between;
+      }
+      .Grail header {
+        width: 100%;
+        height: 15%;
+        text-align: center;
+        color: red;
+        background-color: #666666;
+      }
+      .Grail .GrailBox {
+        width: 100%;
+        height: 60%;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      .Grail .GrailBox main,
+      .Grail .GrailBox nav,
+      .Grail .GrailBox aside {
+        width: 30%;
+        height: 100%;
+        text-align: center;
+      }
+      .Grail .GrailBox main {
+        background-color: #d6d6d6;
+        flex-grow: 1;
+      }
+      .Grail .GrailBox nav {
+        background-color: #7bd;
+        order: -1;
+      }
+      .Grail .GrailBox aside {
+        background-color: #ff6633;
+      }
+      .Grail footer {
+        width: 100%;
+        height: 15%;
+        text-align: center;
+        background-color: #666666;
+      }
     </style>
-</head>
-<body>
-<!--1个点-->
-<div class="container">
-    <div class="box">
+  </head>
+  <body>
+    <!--1个点-->
+    <div class="container">
+      <div class="box">
         <span></span>
-    </div>
-    <div class="box" style="justify-content: center;">
+      </div>
+      <div class="box" style="justify-content: center;">
         <span class="span"></span>
-    </div>
-    <div class="box" style="justify-content: flex-end;">
+      </div>
+      <div class="box" style="justify-content: flex-end;">
         <span class="spanR"></span>
+      </div>
     </div>
-</div>
-<!--2个点-->
-<div class="container">
-    <div class="box">
+    <!--2个点-->
+    <div class="container">
+      <div class="box">
         <span></span>
         <span></span>
-    </div>
-    <div class="box" style="justify-content: space-around;">
+      </div>
+      <div class="box" style="justify-content: space-around;">
         <span class="span"></span>
         <span class="span"></span>
-    </div>
-    <div class="box" style="justify-content: flex-start;">
+      </div>
+      <div class="box" style="justify-content: flex-start;">
         <span></span>
         <span style="align-self: center;"></span>
+      </div>
     </div>
-</div>
-<!--3个点-->
-<div class="container">
-    <div class="box" style="justify-content: space-around;">
+    <!--3个点-->
+    <div class="container">
+      <div class="box" style="justify-content: space-around;">
         <span class="span"></span>
         <span class="span"></span>
         <span class="span"></span>
-    </div>
-    <div class="box" style="flex-direction: column;justify-content: space-around;">
+      </div>
+      <div
+        class="box"
+        style="flex-direction: column;justify-content: space-around;"
+      >
         <span class="spanT"></span>
         <span class="spanT"></span>
         <span class="spanT"></span>
-    </div>
-    <div class="box" style="flex-wrap: wrap;">
-       <div class="column" style="justify-content: flex-start;">
-           <span class="spanT"></span>
-       </div>
+      </div>
+      <div class="box" style="flex-wrap: wrap;">
+        <div class="column" style="justify-content: flex-start;">
+          <span class="spanT"></span>
+        </div>
         <div class="column" style="justify-content: center;">
-            <span class="spanT spanR"></span>
+          <span class="spanT spanR"></span>
         </div>
         <div class="column" style="justify-content: flex-end;">
-            <span class="spanT spanR"></span>
+          <span class="spanT spanR"></span>
         </div>
+      </div>
     </div>
-</div>
-<!--4个点-->
-<div class="container">
-    <div class="box" style="flex-wrap: wrap;">
+    <!--4个点-->
+    <div class="container">
+      <div class="box" style="flex-wrap: wrap;">
         <div class="column">
-            <span class="span spanT"></span>
-            <span class="span spanT"></span>
+          <span class="span spanT"></span>
+          <span class="span spanT"></span>
         </div>
         <div class="column">
-            <span class="span spanT"></span>
-            <span class="span spanT"></span>
+          <span class="span spanT"></span>
+          <span class="span spanT"></span>
         </div>
-    </div>
-    <div class="box" style="flex-wrap: wrap;justify-content:space-between;">
+      </div>
+      <div class="box" style="flex-wrap: wrap;justify-content:space-between;">
         <span></span>
         <span></span>
         <span class="spanR"></span>
         <span></span>
+      </div>
     </div>
-</div>
-<!--5个点-->
-<div class="container">
-    <div class="box" style="flex-wrap: wrap;">
+    <!--5个点-->
+    <div class="container">
+      <div class="box" style="flex-wrap: wrap;">
         <div class="column">
-            <span class="span spanT"></span>
-            <span class="span spanT"></span>
+          <span class="span spanT"></span>
+          <span class="span spanT"></span>
         </div>
         <siv class="column">
-            <span class="span spanT"></span>
+          <span class="span spanT"></span>
         </siv>
         <div class="column">
-            <span class="span spanT"></span>
-            <span class="span spanT"></span>
+          <span class="span spanT"></span>
+          <span class="span spanT"></span>
         </div>
+      </div>
     </div>
-</div>
-<!--6个点-->
-<div class="container">
-    <div class="box" style="flex-wrap: wrap;">
+    <!--6个点-->
+    <div class="container">
+      <div class="box" style="flex-wrap: wrap;">
         <div class="column">
-            <span class="span spanT"></span>
-            <span class="span spanT"></span>
-            <span class="span spanT"></span>
+          <span class="span spanT"></span>
+          <span class="span spanT"></span>
+          <span class="span spanT"></span>
         </div>
         <div class="column">
-            <span class="span spanT"></span>
-            <span class="span spanT"></span>
-            <span class="span spanT"></span>
+          <span class="span spanT"></span>
+          <span class="span spanT"></span>
+          <span class="span spanT"></span>
         </div>
         <div class="column">
-            <span class="span spanT"></span>
-            <span class="span spanT"></span>
-            <span class="span spanT"></span>
+          <span class="span spanT"></span>
+          <span class="span spanT"></span>
+          <span class="span spanT"></span>
         </div>
+      </div>
     </div>
-</div>
-<hr>
-<!--网格布局-->
-<div class="Grid">
-    <div class="GridRow">
+    <hr />
+    <!--网格布局-->
+    <div class="Grid">
+      <div class="GridRow">
         <div class="GridCeil">flex-grow:0</div>
         <div class="GridCeil">flex-grow:0</div>
         <div class="GridCeil">flex-grow:0</div>
-    </div>
-    <div class="GridRow">
+      </div>
+      <div class="GridRow">
         <div class="GridCeil" style="flex-grow: 1">flex-grow:1</div>
         <div class="GridCeil" style="flex-grow: 1">flex-grow:1</div>
         <div class="GridCeil" style="flex-grow: 1">flex-grow:1</div>
-    </div>
-    <div class="GridRow">
+      </div>
+      <div class="GridRow">
         <div class="GridCeil" style="flex-grow: 0">flex-grow:0</div>
         <div class="GridCeil" style="flex-grow: 2">flex-grow:2</div>
         <div class="GridCeil" style="flex-grow: 0">flex-grow:1</div>
+      </div>
     </div>
-</div>
-<!--圣杯布局-->
-<div class="Grail">
-    <header>header</header>
-    <div class="GrailBox">
+    <!--圣杯布局-->
+    <div class="Grail">
+      <header>header</header>
+      <div class="GrailBox">
         <main>middle</main>
         <nav>left</nav>
         <aside>right</aside>
+      </div>
+      <footer>footer</footer>
     </div>
-    <footer>footer</footer>
-</div>
-</body>
+  </body>
 </html>

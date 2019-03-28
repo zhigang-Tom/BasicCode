@@ -5,6 +5,7 @@ sass用$定义变量，变量可以定义在css规则之外也可以定在css规
 <p>
 sass变量名称可以用中划线也可以用下滑线，中划线定义的变量可以用下滑线来引用，反之亦然
 </p>
+
 ```
 $basic-border: 1px solid black;
 $plain-font: "Myriad Pro"、Myriad、"Helvetica Neue"、Helvetica; 
@@ -72,6 +73,7 @@ $highlight-border: 1px solid $highlight-color;
 &:父选择器<br/>
 当包含父选择器标识符的嵌套规则被打开时，它不会像后代选择器那样进行拼接，而是&被父选择器直接替换：
 </p>
+
 ```
 article a {
   color: blue;
@@ -102,6 +104,7 @@ nav a, aside a {color: blue}
 ~:匹配所有在元素之后的同级元素。<br>
 这些选择器在sass中含义一样
 </p>
+
 ```
 article {
   ~ article { border-top: 1px dashed #ccc }

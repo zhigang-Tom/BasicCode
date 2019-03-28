@@ -6,7 +6,7 @@ v-bind指令在布尔特性的情况下，布尔特性的存在即暗示为 true
 </p>
 
 ```
-<button v-bind:disabled="isButtonDisabled">Button</button>
+<button v-bind:disabled="isButtonDisabled">clickTxt</button>
 ```
 <p>
 上面例子中disabled即为“布尔特性”，如果 isButtonDisabled 的值是 null、undefined 或 false，则 disabled 特性甚至不会被包含在渲染出来的 <button> 元素中。

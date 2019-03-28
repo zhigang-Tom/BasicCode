@@ -1,6 +1,7 @@
 ####linus 常用知识收集
 
-#####linus常用命令
+#####linus 常用命令
+
 <p>
 pwd:查看当前文件夹路径
 </p>
@@ -21,24 +22,24 @@ cat:查看文件内容
 mkdir:创建文件夹
 </p>
 
-#####scp远程上传下载文件命令
+#####scp 远程上传下载文件命令
 
-######1.scp从服务器下载文件到本地
+######1.scp 从服务器下载文件到本地
+
 <p>
 scp cloud@192.168.99.253:/home/cloud/work/cloud/package.json /home/fengzhigang/work
 从192.168.99.253服务器上下载package.json文件到本地work目录下，其中cloud是服务器用户名
 </p>
 
+######2.scp 上传本地文件到服务器
 
-######2.scp上传本地文件到服务器
 <p>
 scp /home/fengzhigang/work/cloud/tenantapp/app.apk
 cloud@192.168.99.253:/home/cloud/work/cloud_dist/tenantapp
 将本地tenantapp目录下的app.apk文件上传到服务器tenantapp目录下
 </p>
 
-
-######3.scp从服务器下载整个目录
+######3.scp 从服务器下载整个目录
 
 <p>
  scp -r cloud@192.168.99.253:/home/cloud/work/cloud/tenantapp/project
@@ -46,8 +47,7 @@ cloud@192.168.99.253:/home/cloud/work/cloud_dist/tenantapp
  将服务器上tenantapp目录下的project目录下载到本地work目录下
 </p>
 
-
-######4.scp上传目录到服务器
+######4.scp 上传目录到服务器
 
 <p>
 scp  -r local_dir username@servername:remote_dir
@@ -55,7 +55,7 @@ scp  -r local_dir username@servername:remote_dir
 把当前目录下的test目录上传到服务器的/var/www/ 目录
 </p>
 
-####linus软连接
+####linus 软连接
 
 <p>
 软连接，以路径形式存在，类似于windows系统中的快捷方式
@@ -66,6 +66,7 @@ scp  -r local_dir username@servername:remote_dir
 </p>
 
 #####创建软连接
+
 <p>
 ln -s /home/fengzhigang/work/cloud/tenantapp /home/fengzhigang/work/test
 ln -s命令用于创建软连接，
@@ -74,11 +75,13 @@ test是软连接
 </p>
 
 #####查看软连接
+
 <p>
 用命令ls到指定目录查看软连接
 </p>
 
 #####修改软连接
+
 <p>
 ln -snf /home/fengzhigang/work/cloud/app /home/fengzhigang/work/test
 ln -snf 命令用于修改软连接, 修改原文件路径
@@ -87,6 +90,7 @@ ln -snf 命令用于修改软连接, 修改原文件路径
 </p>
 
 #####删除软连接
+
 <p>
 rm -rf test
 rm -rf 用于删除软连接

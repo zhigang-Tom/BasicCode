@@ -1,6 +1,7 @@
-####JQuery ajax参数与get post方法
+####JQuery ajax 参数与 get post 方法
 
 #####1.参数
+
 <p>
 $.ajax(options)该方法只有一个参数options,但是该参数包含此方法请求时的所有参数，以键/值的形式展现,具体如下所示
 </p>
@@ -56,6 +57,7 @@ function(XMLHttpRequest,textStatus){
 }
 
 ```
+
 <p>
 10.success 要求为Function类型的参数，请求成功后调用的回调函数，有两个参数。1.由服务器返回，并根据dataType参数进行处理后的数据。2.描述状态的字符串.
 </p>
@@ -66,6 +68,7 @@ function(data,textStatus){
 　this;//调用本次ajax请求时传递的options参数
 }
 ```
+
 <p>
  11.error 要求为Function类型的参数，请求失败时被调用的函数。该函数有3个参数，XMLHttpRequest对象、错误信息、捕获的错误对象[可选].
 </p>
@@ -78,11 +81,13 @@ this;//调用本次ajax请求时传递的options参数　　
 }
 
 ```
+
 <p>
 12..contentType 要求为String类型的参数，当发送信息至服务器时。内容编码类型默认为"application/x-www-form-urlencoded"。该默认值适合大多数应用场合。
 </p>
 
-#####2.get请求
+#####2.get 请求
+
 ```
 $.ajax({
     type:'GET',
@@ -92,15 +97,16 @@ $.ajax({
     beforeSend: function(request) {
             request.setRequestHeader("Authorization", Token);
         },
-    success:function(result) {       
-        // result 为获取的数据                 
+    success:function(result) {
+        // result 为获取的数据
         },
         error:function(error) {
             console.log( 'error', error)
         }
     });
 ```
-#####3.post请求
+
+#####3.post 请求
 
 ```
 $.ajax({
@@ -114,10 +120,14 @@ $.ajax({
         },
     success:function(result) {
         // result 为请求的结果
-        }，			               
+        }，
         error:function(error) {
             console.log( 'error', error)
         }
-  	  });	
+  	  });
 
 ```
+
+<p>
+注意：jquery的ajax方法；在success中使用return；来结束程序的时候，结束的只是success这个方法，也就是说success中的return的作用范围只是success；如果要想在success中使用return结束整个js函数，最好在最外面的方法体内定义一个全局的变量，var isOver = true;在success中如果满足条件就将isOver置为false在ajax方法体外通过全局变量isOver的值来决定js函数是否return，同时也要注意：ajax方法的async:false,一定要是false；
+<p>

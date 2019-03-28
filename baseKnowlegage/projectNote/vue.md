@@ -1,7 +1,9 @@
 ####项目笔记
+
 <p>在此记录项目中遇到的知识点</p>
 
 ######Class
+
 ```
     <div class="static"
         v-bind:class="{ active: isActive, 'text-danger': hasError }">
@@ -29,7 +31,9 @@
 ```
     <div v-bind:class="[isActive ? activeClass : '', errorClass]"></div>
 ```
+
 ######style
+
 ```
     <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
     data: {
@@ -37,6 +41,7 @@
         fontSize: 30
     }
 ```
+
 ```
     <div v-bind:style="styleObject"></div>
     data: {
@@ -48,18 +53,23 @@
 ```
 
 ######img
+
 ```
     <img class="binding-img" :src="require('../assets/images/test.png')" />
 ```
+
 ######background-image
+
 ```
     <div :style="{ 'background': 'url(' + require('../img/'+bgDef) + ') no-repeat center center', 'background-size': '100% 100%'}">
 ```
+
 ```
     <div :style="{ background: 'url(' + require('../img/'+ testBg ? testBg : bgDef) + ') no-repeat center center', backgroundSize: '100% 100%'}">
 ```
 
-######ref & $refs
+######ref & \$refs
+
 <p>
 ref 被用来给元素或子组件注册引用信息。引用信息将会注册在父组件的 $refs 对象上。如果在普通的 DOM 元素上使用，引用指向的就是 DOM 元素；如果用在子组件上，引用就指向组件实例：
 </p>
@@ -110,4 +120,5 @@ new Vue({
 ```
 
 ######Object.assign()
+
 <p>Object.assign()注意浅拷贝问题</p>

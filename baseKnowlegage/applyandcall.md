@@ -1,4 +1,5 @@
 ####apply(), call()
+
 <p>
 obj.call(thisObj, arg1, arg2, ...);
 </p>
@@ -30,14 +31,16 @@ sub.apply(add, [5,3])//2
 add.call(sub, 5,3)//8
 add.apply(sub, [5,3])//8
 ```
+
 ```
 调用原生对象的方法
-var a = {0:1, 1:"yjc", length: 2}; 
+var a = {0:1, 1:"yjc", length: 2};
 
 a.slice(); //TypeError: a.slice is not a function
 
 Array.prototype.slice.call(a);//[1, "yjc"]
 ```
+
 ```
 实现继承
 let Parent = function () {

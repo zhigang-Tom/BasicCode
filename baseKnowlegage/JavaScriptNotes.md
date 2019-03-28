@@ -1,4 +1,5 @@
 ####变量，作用域和内存问题
+
 <p>
 JS变量可以用来保存两种类型的值：基本类型值和引用类型值。基本类型值源自以下5种基本数据类型：
 Undefined,Null,Boolean,Number,String、
@@ -50,5 +51,3 @@ Undefined,Null,Boolean,Number,String、
 <p>
 JS是一门具有自动垃圾收集机制的编程语言，开发人员不必关心内存分配和回收问题
 </p>
-
-
