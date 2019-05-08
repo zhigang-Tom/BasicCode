@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Transtion mode</title>
+    <script src="./vue.js"></script>
+    <style>
+      .on-enter-active,.off-enter-active{
+      transition: 8s ease;
+    }
+    .on-leave-active,.off-leave-active{
+      transition: 8s ease;
+    }
+    .on-enter,.on-leave-to,.off-enter,.off-leave-to{
+      opacity: 0;
+    }
+    </style>
+  </head>
+  <body>
+    <!-- 过渡模式是建立在多组件切换的基础上的，也就是动态组件切换，并且当两个被切换的元素是同种标签的内容时（比如这里都是button），需要给每个元素加key用以区分元素。
+    否则由于Vue机制的原因，为了性能会使用同一个元素。也就是说你切换时并不会更换掉整个元素，而是替换掉该元素中的内容的值，以此来切换，所以在这里需要添加key -->
+  <div id="test">
+    <transition name="on" mode="out-in"><!--mode只适用于一个transition内的同标签切换-->
+      <button v-if="show" key="but1">on</button>
+      <button v-else key="but2">off</button><!--key为了防止只是修改内容不重新渲染-->
+    </transition>
+  
+    <button style="margin-top: 100px;" @click="show=!show">切换</button>
+  </div>
+  </div>
+    <script>
+      new Vue({
+        el:'#test',
+        data:{
+          show:true
+        }
+      })
+    </script>
+  </body>
+</html>

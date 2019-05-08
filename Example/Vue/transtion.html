@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Transtion</title>
+    <script src="./vue.js"></script>
+    <style>
+      .v-enter,
+      .v-leave-to {
+        opacity: 0; /*透明度*/
+        transform: translateX(150px);
+      }
+      /*入场(离场)动画的时间段   */
+      .v-enter-active,
+      .v-leave-active {
+        transition: all 8s ease;
+      }
+      .my-enter,
+      .my-leave-to {
+        opacity: 0; /*透明度*/
+        transform: translateY(70px);
+      }
+      .my-enter-active,
+      .my-leave-active {
+        transition: all 8s ease;
+      }
+    </style>
+  </head>
+  <body>
+  <!--vue transition的作用：为被动画元素添加动画样式-->
+  <!-- transition添加的样式 v-enter-active、v-enter-to、v-leave-active、v-leave-to 默认以v-enter开头，如果定义了name值需要与name值相同  -->
+    <div id="app">
+      <input type="button" value="toggle" @click="flag=!flag" />
+      <input type="button" value="toggle2" @click="flag2=!flag2" />
+
+      <!--1. 使用transition元素把需要被动画控制的元素，包裹起来-->
+      <transition>
+        <h3 v-if="flag">这是一个H3</h3>
+      </transition>
+
+      <transition name="my">
+        <!--区分不同组织间动画-->
+        <h6 v-if="flag2">这是一个H6</h6>
+      </transition>
+    </div>
+    <script>
+      var vm = new Vue({
+        el: "#app",
+        data: {
+          flag: false,
+          flag2: false
+        },
+        methods: {}
+      });
+    </script>
+  </body>
+</html>
